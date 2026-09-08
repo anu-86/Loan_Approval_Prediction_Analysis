@@ -1,0 +1,324 @@
+# SQL Analysis – Loan Approval Prediction Analysis
+
+## 1. Overview
+
+SQL analysis was performed on the cleaned loan dataset to understand the factors associated with loan approval and rejection.
+
+**Dataset Summary:**
+
+* Total Applications: 614
+* Approved Loans: 422
+* Rejected Loans: 192
+* Overall Approval Rate: 68.73%
+
+---
+
+## 2. Overall Loan Approval
+
+The overall loan approval rate is **68.73%**, with 422 approved applications out of 614 total applications.
+
+### Key Insight
+
+The majority of applications were approved, but 192 applications were rejected, showing that there are still significant differences between applicant profiles.
+
+---
+
+## 3. Credit History Analysis
+
+Applicants with a good credit history (`Credit_History = 1`) had an approval rate of **79.05%**.
+
+### Key Insight
+
+Credit History is one of the strongest factors associated with loan approval in this dataset.
+
+---
+
+## 4. Education Analysis
+
+| Education    | Approval Rate |
+| ------------ | ------------: |
+| Graduate     |        70.83% |
+| Not Graduate |        61.19% |
+
+### Key Insight
+
+Graduate applicants had a higher approval rate than Not Graduate applicants.
+
+---
+
+## 5. Gender Analysis
+
+| Gender | Approval Rate |
+| ------ | ------------: |
+| Female |        66.96% |
+| Male   |        69.12% |
+
+### Key Insight
+
+The difference between male and female approval rates is relatively small. Therefore, Gender does not appear to be a major differentiating factor in this dataset.
+
+---
+
+## 6. Marital Status Analysis
+
+| Marital Status | Approval Rate |
+| -------------- | ------------: |
+| No             |        62.91% |
+| Yes            |        71.82% |
+
+### Key Insight
+
+Married applicants had a higher approval rate than unmarried applicants.
+
+---
+
+## 7. Dependents Analysis
+
+| Dependents | Approval Rate |
+| ---------- | ------------: |
+| 0          |        68.61% |
+| 1          |        64.71% |
+| 2          |        75.25% |
+| 3+         |        64.71% |
+
+### Key Insight
+
+Applicants with 2 dependents had the highest approval rate at **75.25%**. The relationship is not strictly increasing or decreasing with the number of dependents.
+
+---
+
+## 8. Self-Employment Analysis
+
+| Self Employed | Approval Rate |
+| ------------- | ------------: |
+| No            |        68.80% |
+| Yes           |        68.29% |
+
+### Key Insight
+
+The difference is only **0.51 percentage points**, indicating that Self-Employment status has very little difference in approval rates in this dataset.
+
+---
+
+## 9. Property Area Analysis
+
+| Property Area | Approval Rate |
+| ------------- | ------------: |
+| Rural         |        61.45% |
+| Semiurban     |        76.82% |
+| Urban         |        65.84% |
+
+### Key Insight
+
+Semiurban applicants had the highest approval rate at **76.82%**, while Rural applicants had the lowest at **61.45%**.
+
+---
+
+## 10. Applicant Income Analysis
+
+Applicant income was categorized into three groups:
+
+* Low Income: Less than 3000
+* Medium Income: 3000–5999
+* High Income: 6000 and above
+
+| Income Category | Approval Rate |
+| --------------- | ------------: |
+| Low Income      |        69.54% |
+| Medium Income   |        69.36% |
+| High Income     |        66.43% |
+
+### Key Insight
+
+Approval rates were relatively similar across income categories. High-income applicants did not have a higher approval rate in this dataset.
+
+---
+
+## 11. Loan Amount Analysis
+
+Loan amount was categorized into:
+
+* Low Loan: Less than 100
+* Medium Loan: 100–199
+* High Loan: 200 and above
+
+| Loan Category | Approval Rate |
+| ------------- | ------------: |
+| Low Loan      |        69.06% |
+| Medium Loan   |        69.74% |
+| High Loan     |        63.53% |
+
+### Key Insight
+
+High loan requests had a lower approval rate compared with Low and Medium loan categories.
+
+---
+
+## 12. Loan Amount Term Analysis
+
+The **360-month term** was the most common loan term, with 526 applications and a **69.77% approval rate**.
+
+### Key Insight
+
+Some loan terms had very few applications. Therefore, extremely high or low approval percentages for those terms should be interpreted carefully.
+
+---
+
+## 13. Coapplicant Income Analysis
+
+Coapplicant income was categorized into:
+
+* No Coapplicant Income
+* Low Income
+* Medium Income
+* High Income
+
+| Coapplicant Income Category | Approval Rate |
+| --------------------------- | ------------: |
+| No Coapplicant Income       |        64.84% |
+| Low Income                  |        73.24% |
+| Medium Income               |        72.02% |
+| High Income                 |        64.52% |
+
+### Key Insight
+
+Applicants with Low or Medium coapplicant income had higher approval rates than applicants with no coapplicant income or high coapplicant income.
+
+---
+
+## 14. Average Applicant Income by Loan Status
+
+| Loan Status  | Average Applicant Income |
+| ------------ | -----------------------: |
+| Rejected (N) |                  5446.08 |
+| Approved (Y) |                  5384.07 |
+
+### Key Insight
+
+The average applicant income of rejected applications was slightly higher than approved applications. This indicates that higher applicant income alone does not guarantee loan approval.
+
+---
+
+## 15. Average Coapplicant Income by Loan Status
+
+| Loan Status  | Average Coapplicant Income |
+| ------------ | -------------------------: |
+| Rejected (N) |                    1877.81 |
+| Approved (Y) |                    1504.52 |
+
+### Key Insight
+
+Rejected applications had a higher average coapplicant income than approved applications. Therefore, coapplicant income alone does not appear to be a strong predictor of loan approval.
+
+---
+
+## 16. Average Loan Amount by Loan Status
+
+| Loan Status  | Average Loan Amount |
+| ------------ | ------------------: |
+| Rejected (N) |              149.89 |
+| Approved (Y) |              143.87 |
+
+### Key Insight
+
+The average loan amount was slightly higher for rejected applications. The difference is relatively small, so Loan Amount alone does not appear to be a strong approval factor.
+
+---
+
+## 17. Credit History + Education Analysis
+
+| Credit History | Education    | Approval Rate |
+| -------------: | ------------ | ------------: |
+|              0 | Graduate     |         9.52% |
+|              0 | Not Graduate |         3.85% |
+|              1 | Graduate     |        80.10% |
+|              1 | Not Graduate |        75.00% |
+
+### Key Insight
+
+Credit History shows a much stronger relationship with approval than Education.
+
+Applicants with good credit history had high approval rates regardless of education level.
+
+The highest rate was observed for:
+
+**Credit History = 1 + Graduate → 80.10%**
+
+---
+
+## 18. Credit History + Property Area Analysis
+
+| Credit History | Property Area | Approval Rate |
+| -------------: | ------------- | ------------: |
+|              0 | Rural         |         7.14% |
+|              0 | Semiurban     |        13.33% |
+|              0 | Urban         |         3.23% |
+|              1 | Rural         |        71.52% |
+|              1 | Semiurban     |        86.21% |
+|              1 | Urban         |        77.19% |
+
+### Key Insight
+
+The combination of **Credit History = 1 + Semiurban Property Area** had the highest approval rate at **86.21%**.
+
+Again, Credit History appears to be the dominant factor in this combined analysis.
+
+---
+
+## 19. Married + Education Analysis
+
+| Married | Education    | Approval Rate |
+| ------- | ------------ | ------------: |
+| No      | Graduate     |        63.10% |
+| No      | Not Graduate |        62.22% |
+| Yes     | Graduate     |        75.00% |
+| Yes     | Not Graduate |        60.67% |
+
+### Key Insight
+
+The **Married + Graduate** group had the highest approval rate at **75.00%** among these combinations.
+
+---
+
+## 20. Top Approved Applicant Income Analysis
+
+The top 10 approved applications by Applicant Income were examined to understand high-income approved applicant profiles.
+
+### Key Observation
+
+Most of the top-income approved applicants had:
+
+* Graduate education
+* Credit History = 1
+* Urban or Semiurban property areas
+
+This supports the earlier finding that Credit History is an important factor in the dataset.
+
+---
+
+# Final SQL Business Insights
+
+Based on the SQL analysis, the major findings are:
+
+1. **Overall loan approval rate is 68.73%.**
+2. **Credit History is the strongest visible factor associated with loan approval.**
+3. Applicants with `Credit_History = 1` had a **79.05% approval rate**.
+4. **Credit History = 1 + Semiurban Property Area** had the highest combined approval rate at **86.21%**.
+5. Graduate applicants had a higher approval rate (**70.83%**) than Not Graduate applicants (**61.19%**).
+6. Semiurban property applicants had the highest property-area approval rate (**76.82%**).
+7. Married applicants had a higher approval rate (**71.82%**) than unmarried applicants (**62.91%**).
+8. Self-Employment showed almost no difference in approval rates.
+9. Applicant Income and Loan Amount averages were very similar between approved and rejected applications.
+10. High loan requests had a lower approval rate (**63.53%**) than Low and Medium loan categories.
+11. Some loan-term categories had very small sample sizes, so their percentages should be interpreted cautiously.
+12. The analysis shows **associations and patterns**, not proof that any single factor directly causes loan approval or rejection.
+
+---
+
+# Conclusion
+
+The SQL analysis provides a deeper understanding of loan approval patterns in the dataset.
+
+The strongest observed pattern is the relationship between **Credit History and Loan Approval**. Applicants with good credit history consistently showed much higher approval rates across different education and property-area groups.
+
+These SQL findings will be used as a foundation for the **Power BI dashboard**, where KPIs, charts, filters, and interactive visualizations will be created to communicate the analysis clearly.

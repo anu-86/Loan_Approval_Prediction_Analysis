@@ -1,0 +1,92 @@
+# KPI Measures
+
+## 1. Total Applications
+
+### DAX Formula
+
+Total Applications =
+DISTINCTCOUNT(LoanData[Loan_ID])
+
+### Purpose
+
+Calculates the total number of unique loan applications in the dataset.
+
+## 2. Approved Loans
+
+### DAX Formula
+
+Approved Loans =
+CALCULATE(
+DISTINCTCOUNT(LoanData[Loan_ID]),
+LoanData[Loan_Status] = "Y"
+)
+
+### Purpose
+
+Calculates the total number of loan applications that were approved.
+
+## 3. Rejected Loans
+
+### DAX Formula
+
+Rejected Loans =
+CALCULATE(
+DISTINCTCOUNT(LoanData[Loan_ID]),
+LoanData[Loan_Status] = "N"
+)
+
+### Purpose
+
+Calculates the total number of loan applications that were rejected.
+
+## 4. Approval Rate %
+
+### DAX Formula
+
+Approval Rate % =
+DIVIDE(
+[Approved Loans],
+[Total Applications],
+0
+)
+
+### Purpose
+
+Calculates the percentage of loan applications that were approved out of the total applications.
+
+## 5. Avg Applicant Income
+
+### DAX Formula
+
+Avg Applicant Income =
+AVERAGE(LoanData[ApplicantIncome])
+
+### Purpose
+
+Calculates the average income of loan applicants.
+
+## 6. Avg Coapplicant Income
+
+### DAX Formula
+
+Avg Coapplicant Income =
+AVERAGE(LoanData[CoapplicantIncome])
+
+### Purpose
+
+Calculates the average income of coapplicants.
+
+## 7. Avg Loan Amount
+
+### DAX Formula
+
+Avg Loan Amount =
+AVERAGE(LoanData[LoanAmount])
+
+### Purpose
+
+Calculates the average loan amount requested by applicants.
+
+## Summary
+
+These DAX measures are used as dynamic KPIs in the Power BI dashboard. They automatically respond to slicers and filters applied to the report, allowing users to analyse loan applications based on different applicant and loan characteristics.

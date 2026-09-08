@@ -1,0 +1,237 @@
+# Power BI Insights
+
+## Project Overview
+
+This document summarizes the key findings identified during the Loan Approval Prediction Analysis project. The insights were collected from data cleaning, Exploratory Data Analysis (EDA), SQL analysis, and the final Power BI dashboard.
+
+---
+
+# 1. Data Quality & Cleaning Insights
+
+### Missing Values
+
+Missing values were identified in several columns, including Gender, Married, Dependents, Self_Employed, LoanAmount, Loan_Amount_Term, and Credit_History.
+
+The missing values were cleaned during the data-cleaning stage, and the cleaned dataset contained no blank values in the analysed fields.
+
+### Outlier Analysis
+
+Potential outliers were identified in ApplicantIncome, CoapplicantIncome, and LoanAmount using the IQR method.
+
+These values were retained because they may represent genuine applicant financial situations, such as high-income applicants or applicants requesting larger loan amounts.
+
+---
+
+# 2. Exploratory Data Analysis Insights
+
+## Applicant Income
+
+ApplicantIncome showed a wide range of values, indicating significant variation in the financial profiles of applicants.
+
+* Minimum Applicant Income: 150
+* Maximum Applicant Income: 81,000
+* Average Applicant Income: 5,403.46
+
+The presence of high-income applicants contributed to the observed outliers.
+
+## Loan Amount
+
+LoanAmount also showed variation across applicants.
+
+* Minimum Loan Amount: 9
+* Maximum Loan Amount: 700
+* Average Loan Amount: 145.75
+
+This indicates that applicants requested loans of significantly different sizes.
+
+## Education
+
+Graduate applicants showed a higher loan approval rate compared with non-graduate applicants.
+
+* Graduate approval rate: 70.83%
+* Not Graduate approval rate: 61.19%
+
+This suggests that education level may have some association with loan approval outcomes.
+
+## Loan Amount Term
+
+The EDA showed that the 360-month loan term was the most common loan term among the available records.
+
+However, Loan_Amount_Term was not included in the final Power BI dataset and therefore was not used in the Power BI dashboard.
+
+---
+
+# 3. SQL Analysis Insights
+
+## Credit History
+
+Credit History was identified as one of the important factors associated with loan approval.
+
+Applicants with a positive credit history had a considerably higher likelihood of loan approval compared with applicants with a negative credit history.
+
+## Property Area
+
+Loan applications were distributed across Urban, Semiurban, and Rural property areas.
+
+The distribution showed that property location can be useful for understanding differences in applicant and loan profiles.
+
+## Applicant Profile
+
+The analysis showed differences in loan applications based on demographic and applicant characteristics such as:
+
+* Gender
+* Education
+* Marital Status
+* Dependents
+* Self-Employment status
+
+These factors help understand the composition of the applicant population.
+
+---
+
+# 4. Power BI Dashboard Insights
+
+## Page 1 — Loan Overview
+
+The Loan Overview dashboard provides a high-level summary of the loan application dataset.
+
+### Key KPIs
+
+The dashboard includes:
+
+* Total Applications
+* Approved Loans
+* Rejected Loans
+* Approval Rate %
+
+These KPIs provide an overall view of loan application performance.
+
+### Key Finding
+
+The overall dashboard indicates that loan approval is influenced by applicant and financial characteristics, with Credit History being one of the most important factors observed during the analysis.
+
+---
+
+# 5. Applicant Analysis Insights
+
+The Applicant Analysis page focuses on understanding the characteristics of loan applicants.
+
+### Gender
+
+The dashboard shows the distribution of applications between male and female applicants.
+
+### Education
+
+Graduate applicants form a major portion of the applicant population and also showed a higher approval rate in the earlier analysis.
+
+### Marital Status
+
+The dashboard shows the distribution of applicants based on marital status and allows comparison of application outcomes between married and unmarried applicants.
+
+### Dependents
+
+Applicants have different numbers of dependents, allowing the applicant population to be analysed based on family responsibilities.
+
+### Self-Employment
+
+The dashboard compares self-employed and non-self-employed applicants and helps understand their representation within the loan applicant population.
+
+### Income Range
+
+Applicant income was grouped into ranges to make the income distribution easier to interpret.
+
+The analysis shows considerable variation in applicant income, including some high-income applicants.
+
+---
+
+# 6. Loan Approval & Risk Analysis Insights
+
+This dashboard page focuses on factors related to loan approval and potential risk.
+
+## Credit History vs Loan Approval
+
+Credit History shows a strong relationship with loan approval.
+
+Applicants with a positive credit history have substantially more approved applications, while applicants with a negative credit history have a much higher proportion of rejected applications.
+
+This makes Credit History an important factor for assessing loan approval risk.
+
+## Property Area Distribution
+
+Applications are distributed across:
+
+* Urban
+* Semiurban
+* Rural
+
+The dashboard provides a clear view of the proportion of applications from each property area.
+
+## Applicant Income vs Loan Status
+
+The analysis compares applicant income with loan approval status.
+
+It helps identify whether approval outcomes vary across different applicant income levels and highlights the presence of high-income applicants.
+
+## Average Loan Amount by Loan Status
+
+The dashboard compares the average loan amount between approved and rejected applications.
+
+This helps identify whether the requested loan amount differs between the two approval groups.
+
+## Marital Status vs Loan Approval
+
+The dashboard compares loan approval outcomes across married and unmarried applicants.
+
+This provides an additional view of how demographic characteristics relate to loan approval.
+
+## Education + Credit History vs Loan Status
+
+Combining Education and Credit History provides a deeper view of loan approval patterns.
+
+The analysis shows that Credit History has a stronger relationship with approval outcomes than Education alone.
+
+---
+
+# 7. Overall Key Insights
+
+1. **Credit History is a major factor associated with loan approval.**
+
+2. **Graduate applicants showed a higher approval rate than non-graduate applicants.**
+
+3. **ApplicantIncome has substantial variation, including potential high-income outliers.**
+
+4. **Potential outliers in ApplicantIncome, CoapplicantIncome, and LoanAmount were retained because they may represent genuine financial values.**
+
+5. **LoanAmount varies considerably across applicants, indicating different borrowing requirements.**
+
+6. **Applicant characteristics such as Education, Gender, Marital Status, Dependents, and Self-Employment provide useful demographic context for loan applications.**
+
+7. **Property Area provides additional segmentation for understanding the applicant population.**
+
+8. **Combining Credit History with other applicant characteristics provides a better understanding of loan approval patterns.**
+
+9. **The Power BI dashboard enables interactive analysis through slicers and dynamic KPI measures.**
+
+10. **DAX measures allow the dashboard KPIs to respond dynamically to selected filters and slicers.**
+
+---
+
+# 8. Business Insights
+
+From a lending perspective, the analysis suggests that:
+
+* Credit History should receive significant attention during loan evaluation.
+* Applicant financial information can help understand different borrowing profiles.
+* Demographic characteristics can be used for applicant segmentation.
+* Outliers should not automatically be removed because they may represent genuine high-value applicants.
+* Interactive dashboards can help decision-makers explore approval patterns across different applicant segments.
+
+---
+
+# 9. Project Conclusion
+
+The Loan Approval Prediction Analysis project demonstrates an end-to-end data analytics workflow using Excel, EDA, SQL, and Power BI.
+
+The analysis transformed raw loan application data into meaningful insights through data cleaning, exploratory analysis, SQL-based investigation, DAX measures, and interactive Power BI dashboards.
+
+The final dashboard provides a clear view of applicant characteristics, loan application patterns, approval outcomes, and important risk-related factors, with Credit History emerging as one of the strongest factors associated with loan approval.
