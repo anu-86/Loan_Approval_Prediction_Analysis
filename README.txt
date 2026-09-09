@@ -10,7 +10,7 @@ An end-to-end data analytics project focused on analyzing **loan applications, a
 
 ### Page 1 — Loan Overview
 
-![Loan Overview](8_Screenshots/Page_1_Loan_Overview.png)
+![Loan Overview](./8_Screenshots/Page_1_Loan_Overview.png)
 
 ### Page 2 — Applicant Analysis
 
