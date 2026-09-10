@@ -9,7 +9,7 @@ An end-to-end data analytics project focused on analyzing **loan applications, a
 ## 📊 Dashboard Preview
 
 ### Page 1 — Loan Overview
-![Loan Overview](8_Screenshots/Page_1_Loan_Overview.png?raw=true)
+![Loan Overview](https://raw.githubusercontent.com/anu-86/Loan_Approval_Prediction_Analysis/main/8_Screenshots/Page_1_Loan_Overview.png)
 
 ### Page 2 — Applicant Analysis
 
